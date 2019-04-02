@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <h1><center>Házifeladat #1</center></h1>
+        <p>Hamarosan indul egy nagy projekt, a demoproject.hu. Nincsenek még megfelelően kidolgozva a részletek, azonban az alaprendszer elkészítését meg lehet kezdeni. A Te feladatod lesz elkészíteni az adatbáziskezelő réteg egy részét. Még nem tudni, hogy milyen adatbázist kell a rendszerben használni, ezért úgy kell összeállítani, hogy képes legyen MySQL, PostgreSQL, vagy akár egy NoSQL adatbázist is használni. Nagyon fontos, hogy mivel nagy terheltségű alkalmazás lesz, tudnia kell kezelni több adatbázis kapcsolatot.</p>
+        <p>A feladat második részében az elkészített alaprendszernek tudnia kell egy felhasználólistát megjelenítenie.</p>
+        <h3>Technikai követelmények</h3>
+        <p>A rendszer megvalósításához keretrendszer nem használható. A fájl struktúra megvalósítása a Te feladatod, de vedd figyelembe, hogy egy nagy projektról van szó, ezért nagy mennyiségű forrásfájl lesz.</p>
+        <h4>Adatbázis-kezelés</h4>
+        <p>A beállításokat egy configuration.php fájlban tárold. Meg kell valósítani egy Master és 2 Slave kapcsolat kezelését. A SELECT utasításokhoz a rendszer véletlenszerűen kapcsolódjon az egyik Slave adatbázishoz. Adatmódosító utasításokra kizárólag a Master adatbázist használja.</p>
+        <p>Az általad elkészített rendszernek egyelőre csak MySQL adatbázist kell tudnia kezelni. 3 parancsot implementálj: mysql_query(), mysql_num_rows(), mysql_fetch_assoc()</p>
+        <h4>Felhasználók listája</h4>
+        <p>Az alábbi szerkezet, valamint 5 adat már adott:</p>
+        <pre>    CREATE TABLE `users` (
+			`id` int(11) NOT NULL AUTO_INCREMENT,
+			`name` varchar(80) NOT NULL,
+			`password` varchar(40) NOT NULL,
+			`email` varchar(100) NOT NULL,
+			PRIMARY KEY (`id`)
+			) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+        </pre>
+        <pre>INSERT INTO `users` (`id`, `name`, `password`, `email`) VALUES
+			(1,	'Valentine Logan',	'vitae',	'sit.amet@ad.ca'),
+			(2,	'Nathaniel Burris',	'Curae;',	'iaculis.lacus@per.org'),
+			(3,	'Len Johnston',	'augue',	'libero.est@ut.org'),
+			(4,	'Paki Montgomery',	'vel',	'interdum.Curabitur@rutrumFusce.com'),
+			(5,	'Tad Baxter',	'neque',	'Integer@pellentesquetellus.com');
+        </pre>
+        <p>A listázáshoz nem szükséges formázni az adatokat, elég egy táblázatban megjeleníteni azokat.</p>
+        <h4>Általános tudnivalók</h4>
+        <p>A routing megvalósíŧása kötelező, a megjelenítéshez pedig valamilyen template engine használata szükséges.</p>
+        <p>A feladat megoldására 2 óra van, ezt kérlek vedd figyelembe. Amennyiben a megadott időkeret nem elégséges, akkor kérlek vázold fel, hogy mi hiányzott még a megoldásodból.</p>
+    </body>
+</html>
