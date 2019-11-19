@@ -11,4 +11,8 @@
 |
 */
 
-Route::get('/post/{id}', 'PostsController@view');
+Route::get('/posts', 'PostsController@index')->name('posts.index');
+Route::get('/posts/create', 'PostsController@create');
+Route::get('/posts/{post}', 'PostsController@view')->name('posts.view');
+
+Route::get('/contact', 'ContactController@index');
