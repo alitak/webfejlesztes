@@ -10,12 +10,12 @@ class PostsController extends Controller
     public function index()
     {
         $posts = Post::orderBy('created_at', 'desc')->get();
-        return view('posts.index', ['posts' => $posts]);
+        return view('posts.index', ['posts' => $posts, 'title' => 'My Posts']);
     }
 
     public function view(Post $post)
     {
-        return view('posts.view', ['post' => $post]);
+        return view('posts.view', ['post' => $post, 'title' => $post->title]);
     }
 
     public function create()

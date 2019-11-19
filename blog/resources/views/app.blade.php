@@ -10,15 +10,19 @@
 </head>
 <body>
 
-<div class="container">
-    <div class="row">
-        <div class="col-12 col-lg-3 text-center">
-            <img src="/images/globe-compass-logo.jpg" alt="logo" class="w-100" style="max-width: 300px;    max-height: 50px;">
-        </div>
-        <div class="col-12 col-lg-9">
-            <ul class="nav float-right">
-                <li class="nav-item">
-                    <a class="nav-link active" href="/posts"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+<nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <img src="/images/logo.png" alt="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link active" href="/posts"><i class="fa fa-home" aria-hidden="true"></i> Posts</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/about"><i class="fa fa-user" aria-hidden="true"></i> About</a>
@@ -28,20 +32,32 @@
                 </li>
             </ul>
         </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
         <div class="col text-center">
             <img src="/images/header.jpg" alt="header image" class="w-100">
         </div>
     </div>
 
-    @yield('content')
-
-    <div class="row">
-        <div class="jumbotron w-100 m-0">
-            <h1 class="display-4">copyright &copy; 2019</h1>
-            <p class="lead">Simple blog</p>
-            <hr class="my-4">
+    <div class="row my-3">
+        <div class="col">
+            <h1>{{ ucfirst($title) ?? 'Posts' }}</h1>
         </div>
     </div>
+    @yield('content')
 </div>
+
+<div class="jumbotron m-0">
+    <div class="container-fluid">
+        <h1 class="display-4">copyright &copy; 2019</h1>
+        <p class="lead">Simple blog</p>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
