@@ -10,9 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/posts', 'PostsController@index')->name('posts.index');
-Route::get('/posts/create', 'PostsController@create');
-Route::get('/posts/{post}', 'PostsController@view')->name('posts.view');
-
+Route::get('/', 'PostsController@index')->name('home');
+Route::resource('/posts', 'PostsController');
 Route::get('/contact', 'ContactController@index');

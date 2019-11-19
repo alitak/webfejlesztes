@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top">
+<nav class="navbar navbar-expand-sm navbar-light bg-light {{-- sticky-top --}}">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">
             <img src="/images/logo.png" alt="logo">
@@ -36,21 +36,21 @@
 </nav>
 
 <div class="container">
-    <div class="row">
-        <div class="col text-center">
-            <img src="/images/header.jpg" alt="header image" class="w-100">
-        </div>
-    </div>
+{{--    <div class="row">--}}
+{{--        <div class="col text-center">--}}
+{{--            <img src="/images/header.jpg" alt="header image" class="w-100">--}}
+{{--        </div>--}}
+{{--    </div>--}}
 
     <div class="row my-3">
         <div class="col">
-            <h1>{{ ucfirst($title) ?? 'Posts' }}</h1>
+            <h1>{{ ucfirst($title ?? 'Posts') }}</h1>
         </div>
     </div>
     @yield('content')
 </div>
 
-<div class="jumbotron m-0">
+<div class="jumbotron m-0 mt-5">
     <div class="container-fluid">
         <h1 class="display-4">copyright &copy; 2019</h1>
         <p class="lead">Simple blog</p>
